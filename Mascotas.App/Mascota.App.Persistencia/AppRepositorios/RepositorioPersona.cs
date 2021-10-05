@@ -39,7 +39,11 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<Persona> GetAllPersona()
         {
-            return _appContext.Persona;
+            using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+                var ListadoPersona= (from p in Contexto.Persona select p).ToList();
+                return ListadoPersona;
+        
+            }
         }
         public Persona GetPersona(int IdPersona)
         {
