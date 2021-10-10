@@ -37,11 +37,12 @@ namespace Mascota.App.Persistencia.AppRepositorios
             _appContext.Persona.Remove(personaEncontrada);
             _appContext.SaveChanges();
         }
-        public IEnumerable<Persona> GetAllPersona()
+        public IEnumerable<Persona> GetAllPersona()  
         {
             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
-                var ListadoPersona= (from p in Contexto.Persona select p).ToList();
-                return ListadoPersona;
+                var GetAllPersona= (from p in Contexto.Persona select p).ToList();
+                return GetAllPersona;
+                // se cambio Listado persona por GetAllPersona
         
             }
         }
