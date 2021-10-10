@@ -38,7 +38,9 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<SolicitudVisita> GetAllSolicitud()
         {
-            return _appContext.Solicitud;
+             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+                var ListadoSolicitud= (from s in Contexto.Solicitud select s).ToList();
+                return ListadoSolicitud;
         }
         public SolicitudVisita GetSolicitud(int IdSolicitud)
         {

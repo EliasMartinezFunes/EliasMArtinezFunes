@@ -37,7 +37,9 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<EmpresaVeterinaria> GetAllEmpresa()
         {
-            return _appContext.Empresa;
+             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+                var ListadoEmpresa= (from g in Contexto.Empresa select g).ToList();
+                return ListadoEmpresa;
         }
         public EmpresaVeterinaria GetEmpresa(int IdEmpresa)
         {

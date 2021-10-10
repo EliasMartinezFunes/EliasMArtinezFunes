@@ -42,7 +42,9 @@ namespace Mascota.App.Persistencia.AppRepositorios
 
         public IEnumerable<Animal> GetAllAnimals()
         {
-            return _appContext.Animals;
+             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+                var ListadoAnimal= (from a in Contexto.Animal select a).ToList();
+                return ListadoAnimal;
         }
         public Animal GetAnimals(int IdAnimals)
         {

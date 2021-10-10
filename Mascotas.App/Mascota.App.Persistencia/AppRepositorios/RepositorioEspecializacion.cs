@@ -37,7 +37,9 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<Especializacion> GetAllEspecializaciones()
         {
-            return _appContext.Especializaciones;
+            using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+                var ListadoEspecializacion= (from e in Contexto.Especializacion select e).ToList();
+                return ListadoEspecializacion;
         }
         public Especializacion GetEspecializaciones(int IdEspecializaciones)
         {

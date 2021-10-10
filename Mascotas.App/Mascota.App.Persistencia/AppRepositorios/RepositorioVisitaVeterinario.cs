@@ -37,7 +37,9 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<VisitaVeterinario> GetAllVisitas()
         {
-            return _appContext.Visitas;
+             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+                var ListadoVisita= (from i in Contexto.Visita select i).ToList();
+                return ListadoVisita;
         }
         public VisitaVeterinario GetVisitas(int IdVisitas)
         {
