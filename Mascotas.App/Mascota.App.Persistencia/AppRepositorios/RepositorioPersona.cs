@@ -19,26 +19,24 @@ namespace Mascota.App.Persistencia.AppRepositorios
         /// </sumary>
         ///<param name="appContext"></param>//
 
-        public RepositorioPersona(AppContext appContext)
-        {
-            _appContext= appContext;
-        }
         public Persona AddPersona(Persona persona)
         {
-            var personaEncontrada= _appContext.Persona.Add(persona);
-            _appContext.SaveChanges();
+            using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+            var personaEncontrada= Contexto.Persona.Add(persona);
+            Contexto.SaveChanges();
             return personaEncontrada.Entity;
+            }
         }
         public void DeletePersona(int IdPersona)
         {
+
             var personaEncontrada= _appContext.Persona.FirstOrDefault(p => p.Id==IdPersona);
             if(personaEncontrada == null)
             return;
             _appContext.Persona.Remove(personaEncontrada);
             _appContext.SaveChanges();
         }
-        public IEnumerable<Persona> GetAllPersona()  
-        {
+        public IEnumerable<Persona> GetAllPersona(){
             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
                 var GetAllPersona= (from p in Contexto.Persona select p).ToList();
                 return GetAllPersona;
