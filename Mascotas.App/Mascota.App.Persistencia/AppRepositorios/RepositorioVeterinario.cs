@@ -37,9 +37,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<Veterinario> GetAllVeterinario()
         {
-             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
                 var ListadoVeterinario= (from v in Contexto.Veterinario select v).ToList();
                 return ListadoVeterinario;
+             }
         }
         public Veterinario GetVeterinario(int IdVeterinario)
         {

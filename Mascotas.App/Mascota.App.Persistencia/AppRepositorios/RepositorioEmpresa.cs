@@ -17,15 +17,14 @@ namespace Mascota.App.Persistencia.AppRepositorios
         /// </sumary>
         ///<param name="appContext"></param>//
 
-        public RepositorioEmpresa(AppContext appContext)
-        {
-            _appContext=appContext;
-        }
+        
         public EmpresaVeterinaria AddEmpresa(EmpresaVeterinaria Empresa)
         {
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
             var EmpresaVeterinariaAdicionada= _appContext.Empresa.Add(Empresa);
             _appContext.SaveChanges();
             return EmpresaVeterinariaAdicionada.Entity;
+            }
         }
         public void DeleteEmpresa(int IdEmpresa)
         {
@@ -37,9 +36,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<EmpresaVeterinaria> GetAllEmpresa()
         {
-             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
                 var ListadoEmpresa= (from g in Contexto.Empresa select g).ToList();
                 return ListadoEmpresa;
+             }
         }
         public EmpresaVeterinaria GetEmpresa(int IdEmpresa)
         {

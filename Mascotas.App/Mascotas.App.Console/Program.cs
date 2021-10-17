@@ -32,12 +32,12 @@ namespace Mascotas.App.Console
         {
             var Animals= new Animal
             {
-                Nombres = "Pineda",
+                Nombres = "Pasta",
                 TipoAnimal = "Aves",
                 ColorOjos = "Cafes",
                 ColorPiel = "Roja",
                 Estatura = "25 cm",
-                Raza = "Buchua"
+                Raza = "Papuja"
             };
             _repoMascota.AddAnimals(Animals);
         }
@@ -47,10 +47,10 @@ namespace Mascotas.App.Console
         {
             var persona= new Persona
             {
-            DocId= "098765",
-            Nombre="Elias",
-            Apellidos= "Funes",
-            Telefono="8681879",
+            DocId= "677698",
+            Nombre="Eduardo",
+            Apellidos= "Castro",
+            Telefono="889977",
             Direccion="Tierralta"
             };
             _repoPersona.AddPersona(persona);
@@ -71,8 +71,8 @@ namespace Mascotas.App.Console
             var Empresa= new EmpresaVeterinaria
             {
                 Nit=098765444,
-                RazonSocial="Miraflorez",
-                Direccion="Av Caracas"
+                RazonSocial="Mandamas",
+                Direccion="Av Primera"
             };
             _repoEmpresa.AddEmpresa(Empresa);
         }
@@ -80,11 +80,11 @@ namespace Mascotas.App.Console
         {
             var Solicitud= new SolicitudVisita
             {
-                IdDueño="Elias Martinez",
-                NombreMascota= "Palanca",
+                IdDueño="2",
+                NombreMascota= "Garrote",
                 TipoMascota="Perros",
-                Veterinario="Andres",
-                FechaVisita="3-10-2021"
+                Veterinario="Carlos",
+                FechaVisita="4-10-2021"
             };
             _repoSolicitud.AddSolicitud(Solicitud);
         }
@@ -93,12 +93,12 @@ namespace Mascotas.App.Console
             var Visitas= new VisitaVeterinario
             {   
                 
-                Temperatura="37",
-                Peso="400",
-                FrecuenciaRespiratoria="70",
+                Temperatura="38",
+                Peso="40",
+                FrecuenciaRespiratoria="74",
                 FrecuenciaCardiaca="120/80",
-                EstadoAnimal="Enfermo",
-                IdVeterinario="",
+                EstadoAnimal="Sano",
+                IdVeterinario="2",
                 Recomendacion="No Sofocar"
             };
             _repoVisitas.AddVisitas(Visitas);
@@ -107,8 +107,8 @@ namespace Mascotas.App.Console
         {
             var Veterinario= new Veterinario
             {
-                TarjetaProfesional="7t96965",
-                Especializacion="Aves"
+                TarjetaProfesional="9'98yyh",
+                Especializacion="Gatos"
             };
             _repoPersona.AddPersona(Veterinario);
         }
