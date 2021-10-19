@@ -14,3 +14,10 @@ C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.
 C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.dll
 C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.pdb
 C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.genruntimeconfig.cache
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.csproj.AssemblyReference.cache
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.AssemblyInfoInputs.cache
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.AssemblyInfo.cs
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.csproj.CoreCompileInputs.cache
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.dll
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.pdb
