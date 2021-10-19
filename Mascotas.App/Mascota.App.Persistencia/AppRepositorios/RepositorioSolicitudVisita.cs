@@ -1,5 +1,6 @@
 using Mascota.App.Dominio.Entidades;
 using System.Collections.Generic;
+using Mascota.App.Persistencia.AppRepositorios;
 using System.Linq;
 
 namespace Mascota.App.Persistencia.AppRepositorios
@@ -38,9 +39,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<SolicitudVisita> GetAllSolicitud()
         {
-             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
+             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
                 var ListadoSolicitud= (from s in Contexto.Solicitud select s).ToList();
                 return ListadoSolicitud;
+             }
         }
         public SolicitudVisita GetSolicitud(int IdSolicitud)
         {

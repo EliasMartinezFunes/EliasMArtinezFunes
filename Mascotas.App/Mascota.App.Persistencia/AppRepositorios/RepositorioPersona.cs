@@ -12,46 +12,52 @@ namespace Mascota.App.Persistencia.AppRepositorios
         /// Referencia al contexto del paciente
         /// </sumary>
         
-        private readonly AppContext _appContext;
+        //private readonly AppContext _appContext;
         ///<sumary>
         /// Metodo constructor a utilizar
         /// Inyeccion de dependencias para indicar el contexto a utilizar
         /// </sumary>
         ///<param name="appContext"></param>//
 
-        public RepositorioPersona(AppContext appContext)
-        {
-            _appContext= appContext;
-        }
         public Persona AddPersona(Persona persona)
         {
-            var personaEncontrada= _appContext.Persona.Add(persona);
-            _appContext.SaveChanges();
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var personaEncontrada= Contexto.Persona.Add(persona);
+            Contexto.SaveChanges();
             return personaEncontrada.Entity;
+            }
         }
         public void DeletePersona(int IdPersona)
         {
-            var personaEncontrada= _appContext.Persona.FirstOrDefault(p => p.Id==IdPersona);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var personaEncontrada= Contexto.Persona.SingleOrDefault(p => p.Id==IdPersona);
             if(personaEncontrada == null)
             return;
-            _appContext.Persona.Remove(personaEncontrada);
-            _appContext.SaveChanges();
+            Contexto.Persona.Remove(personaEncontrada);
+            Contexto.SaveChanges();
+            }
         }
-        public IEnumerable<Persona> GetAllPersona()
-        {
-            using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
-                var ListadoPersona= (from p in Contexto.Persona select p).ToList();
-                return ListadoPersona;
+        public IEnumerable<Persona> GetAllPersona(){
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+                var GetAllPersona= (from p in Contexto.Persona select p).ToList();
+                return GetAllPersona;
+                // se cambio Listado persona por GetAllPersona
         
             }
         }
+        //Metodo buscar persona por id
         public Persona GetPersona(int IdPersona)
         {
-            return _appContext.Persona.FirstOrDefault(p => p.Id==IdPersona);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+               // var GetPersona= (from p in Contexto.persona where p.IdPersona==IdPersona select p);
+               // return GetPersona;
+            return Contexto.Persona.SingleOrDefault(p => p.Id==IdPersona);
+            }
         }
         public Persona UpdatePersona(Persona persona)
         {
-            var personaEncontrada= _appContext.Persona.FirstOrDefault(p => p.Id==persona.Id);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var personaEncontrada= Contexto.Persona.SingleOrDefault(p => p.Id==persona.Id);
             if (personaEncontrada!=null)
             {
                 personaEncontrada.Nombre=persona.Nombre;
@@ -60,9 +66,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
                 personaEncontrada.Telefono=persona.Telefono;
                 personaEncontrada.Direccion=persona.Direccion;
 
-                _appContext.SaveChanges();
+                Contexto.SaveChanges();
             }
             return personaEncontrada;
+            }
         }
       
     }

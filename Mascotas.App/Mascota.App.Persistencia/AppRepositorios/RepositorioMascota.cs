@@ -42,9 +42,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
 
         public IEnumerable<Animal> GetAllAnimals()
         {
-             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
-                var ListadoAnimal= (from a in Contexto.Animal select a).ToList();
-                return ListadoAnimal;
+             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+                var ListadoAnimals= (from a in Contexto.Animals select a).ToList();
+                return ListadoAnimals;
+             }
         }
         public Animal GetAnimals(int IdAnimals)
         {
@@ -66,5 +67,5 @@ namespace Mascota.App.Persistencia.AppRepositorios
             return AnimalEncontrada;
         }
 
-    }
+     }
 }

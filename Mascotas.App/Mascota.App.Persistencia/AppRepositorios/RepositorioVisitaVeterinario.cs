@@ -1,5 +1,6 @@
 using Mascota.App.Dominio.Entidades;
 using System.Collections.Generic;
+using Mascota.App.Persistencia.AppRepositorios;
 using System.Linq;
 
 namespace Mascota.App.Persistencia.AppRepositorios
@@ -37,9 +38,11 @@ namespace Mascota.App.Persistencia.AppRepositorios
         }
         public IEnumerable<VisitaVeterinario> GetAllVisitas()
         {
-             using (Repositorios.Appcontext Contexto= new AppRepositorio.AppContext()){
-                var ListadoVisita= (from i in Contexto.Visita select i).ToList();
-                return ListadoVisita;
+             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+                var ListadoVisitas= (from i in Contexto.Visitas select i).ToList();
+                return ListadoVisitas;
+             
+             }
         }
         public VisitaVeterinario GetVisitas(int IdVisitas)
         {
