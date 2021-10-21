@@ -1,0 +1,43 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.ListaEmpresaModel
+@{
+}
+<hr>
+<div id="Principal" Style="width: 100%;display: table;">
+   <div style="border: 1px solid green; 2px 2px red, -1em 0 0.4em blue " class="Clasehover">
+            <div style="border: 1px solid red;" >
+                <img src="https://guiauniversitaria.mx/wp-content/uploads/2020/05/Zootecnia-y-Veterinaria_-%C2%BFen-qu%C3%A9-se-diferencian_.jpg" alt="Imagen" width="200px" height="200px" asp-page="./ListadoAnimal"/>
+            <h3>Empresa dedicada a la prestacion de servicio de acompañamiento medico a la mascota que tanto quieres</h3>
+            </div>
+    </div>
+    <div id="celda2" style="border: green 2px solid;width: 50%;display: table-cell;">
+        <h1>Empresa Veterinaria</h1>
+    <table class= "table">
+        @foreach (var item in Model.Empresa)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Nit
+                </td>
+                <td>
+                    @item.RazonSocial
+                </td>
+                <td>
+                    @item.Direccion
+                </td>
+                <td>
+                    <a  class="btn btn-primary table-btn" asp-page="./BuscarEmpresa" asp-route-Id="@item.Id"><img src="/Img/Buscar.png" height="20px" width="20px" /> Buscar</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-success" asp-page="./ActualizarEmpresa" asp-route-Id="@item.Id">Actualizar</a>
+                </td>
+                 <td>
+                    <a class="btn btn-outline-success" asp-page="./IngresarEmpresa">Ingresar</a>
+                </td>
+            </tr>
+        }
+    </table>
+    </div>

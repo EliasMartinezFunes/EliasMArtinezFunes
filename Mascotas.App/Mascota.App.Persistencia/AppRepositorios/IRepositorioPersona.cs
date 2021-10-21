@@ -12,7 +12,7 @@ namespace Mascota.App.Persistencia.AppRepositorios
         //Agregar
         Persona AddPersona(Persona persona);
         //Actualizar
-        Persona UpdatePersona(Persona persona);
+        Persona UpdatePersona(Persona personas);
         //Eliminar persona
         void DeletePersona(int IdPersona);
         //Buscar persona

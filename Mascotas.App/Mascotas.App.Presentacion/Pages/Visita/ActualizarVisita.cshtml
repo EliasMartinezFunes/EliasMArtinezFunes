@@ -1,0 +1,69 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.ActualizarVisitaModel
+@{
+}
+h1>Actualizar Datos Visita </h1>
+<form method="POST">
+
+    <div class="form-group">
+        <label asp-for="Visitas.Id"></label>
+        <input id="IdV" type="text" asp-for="Visitas.Id" class="form-control" />
+        
+    </div>
+    <div class="form-group">
+        <label asp-for="Visitas.Fecha"></label>
+        <input id="Fecha" type="text" asp-for="Visitas.Fecha" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Visitas.Temperatura"></label>
+        <input id="Temperatura" type="text" asp-for="Visitas.Temperatura" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Visitas.Peso"></label>
+        <input id="Peso" type="text" asp-for="Visitas.Peso" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Visitas.FrecuenciaRespiratoria"></label>
+        <input id="Respiracion" type="text" asp-for="Visitas.FrecuenciaRespiratoria" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Visitas.FrecuenciaCardiaca"></label>
+        <input id="Cardio" type="text" asp-for="Visitas.FrecuenciaCardiaca" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Visitas.EstadoAnimal"></label>
+        <input id="Estado" type="text" asp-for="Visitas.EstadoAnimal" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Visitas.IdVeterinario"></label>
+        <input id="IdVete" type="text" asp-for="Visitas.IdVeterinario" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Visitas.Recomendacion"></label>
+        <input id="Recomendacion" type="text" asp-for="Visitas.Recomendacion" class="form-control" />
+    </div>
+    <div class="form-group">
+       <button type="submit" class="btn btn-outline-danger">Actualizar</button>
+    </div>
+    <div>
+       <button id="btnCance" onclick="LimpiarFormulario();" type="submit" class="btn btn-outline-danger">Cancelar</button>
+       <a asp-page="./ListaAnimal" class="btn btn-outline-success">Volver</a>
+       </div>   
+       <div>
+           
+       </div>  
+    </form>
+    <script>
+       function LimpiarFormulario(){
+                $("#IdV").val('');
+                $("#Fecha").val('');
+                $("#Temperatura").val('');
+                $("#Peso").val('');
+                $("#Respiracion").val('');
+                $("#Cardio").val('');
+                $("#Estado").val('');
+                $("#IdVete").val('');
+                $("#Recomendacion").val('');
+                }
+     </script>

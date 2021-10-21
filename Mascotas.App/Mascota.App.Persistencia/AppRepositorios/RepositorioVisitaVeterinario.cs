@@ -7,50 +7,42 @@ namespace Mascota.App.Persistencia.AppRepositorios
 {
     public class RepositorioVisitaVeterinario: IRepositorioVisitaVeterinario
     {
-        ///<sumary>
-        /// Referencia al contexto del paciente
-        /// </sumary>
-        
-        private readonly AppContext _appContext;
-        ///<sumary>
-        /// Metodo constructor a utilizar
-        /// Inyeccion de dependencias para indicar el contexto a utilizar
-        /// </sumary>
-        ///<param name="appContext"></param>//
-
-        public RepositorioVisitaVeterinario(AppContext appContext)
-        {
-            _appContext=appContext;
-        }
         public VisitaVeterinario AddVisitas(VisitaVeterinario Visitas)
         {
-            var VisitasAdicionada= _appContext.Visitas.Add(Visitas);
-            _appContext.SaveChanges();
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var VisitasAdicionada= Contexto.Visitas.Add(Visitas);
+            Contexto.SaveChanges();
             return VisitasAdicionada.Entity;
+            }
         }
         public void DeleteVisitas(int IdVisitas)
         {
-            var VisitasEncontrada= _appContext.Visitas.FirstOrDefault(o => o.Id==IdVisitas);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var VisitasEncontrada= Contexto.Visitas.SingleOrDefault(o => o.Id==IdVisitas);
             if(VisitasEncontrada == null)
             return ;
-            _appContext.Visitas.Remove(VisitasEncontrada);
-            _appContext.SaveChanges();
+            Contexto.Visitas.Remove(VisitasEncontrada);
+            Contexto.SaveChanges();
+            }
         }
         public IEnumerable<VisitaVeterinario> GetAllVisitas()
         {
              using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
-                var ListadoVisitas= (from i in Contexto.Visitas select i).ToList();
-                return ListadoVisitas;
+                var GetAllVisitas= (from i in Contexto.Visitas select i).ToList();
+                return GetAllVisitas;
              
              }
         }
         public VisitaVeterinario GetVisitas(int IdVisitas)
         {
-            return _appContext.Visitas.FirstOrDefault(o => o.Id==IdVisitas);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            return Contexto.Visitas.SingleOrDefault(o => o.Id==IdVisitas);
+            }
         }
         public VisitaVeterinario UpdateVisitas(VisitaVeterinario Visitas)
         {
-            var VisitasEncontrada= _appContext.Visitas.FirstOrDefault(o => o.Id== Visitas.Id);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var VisitasEncontrada= Contexto.Visitas.SingleOrDefault(o => o.Id== Visitas.Id);
             if(VisitasEncontrada!= null)
             {
                 
@@ -62,9 +54,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
                 VisitasEncontrada.EstadoAnimal=Visitas.EstadoAnimal;
                 VisitasEncontrada.IdVeterinario= Visitas.IdVeterinario;
                 VisitasEncontrada.Recomendacion=Visitas.Recomendacion;
-                _appContext.SaveChanges();
+                Contexto.SaveChanges();
             }
             return VisitasEncontrada;
+        }
         }
     }
 }
