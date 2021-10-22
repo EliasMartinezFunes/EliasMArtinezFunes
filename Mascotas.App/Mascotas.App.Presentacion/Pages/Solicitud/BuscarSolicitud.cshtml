@@ -1,0 +1,24 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.BuscarSolicitudModel
+@{
+}
+<div>
+@Model.Solicitud.Id
+</div>
+<div>
+@Model.Solicitud.IdDueño
+</div>
+<div>
+@Model.Solicitud.NombreMascota
+</div>
+<div>
+@Model.Solicitud.TipoMascota
+</div>
+<div>
+@Model.Solicitud.Veterinario
+</div>
+<div>
+@Model.Solicitud.FechaVisita
+</div>
+
+ <a asp-page="./ListaSolicitud" class="btn btn-outline-success">Volver Listado</a>

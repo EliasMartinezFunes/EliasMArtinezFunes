@@ -25,7 +25,17 @@ namespace Mascotas.App.Presentasion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSingleton<IRepositorioMascota,RepositorioMascota>();
             services.AddSingleton<IRepositorioPersona,RepositorioPersona>();
+            services.AddSingleton<IRepositorioVeterinario,RepositorioVeterinario>();
+            services.AddSingleton<IRepositorioVisitaVeterinario,RepositorioVisitaVeterinario>();
+            services.AddSingleton<IRepositorioEspecializacion,RepositorioEspecializacion>();
+            services.AddSingleton<IRepositorioEmpresa,RepositorioEmpresa>();
+            services.AddSingleton<IRepositorioSolicitudVisita,RepositorioSolicitudVisita>();
+    
+
+            
+            
             
         }
 

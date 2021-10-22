@@ -1,0 +1,44 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.ListaSolicitudModel
+@{
+}
+<hr>
+<div id="Principal" Style="width: 100%;display: table;">
+   
+    </div>
+    <div id="celda2" style="border: green 2px solid;width: 50%;display: table-cell;">
+        <h1>Solicitar Visita medico veterinario</h1>
+    <table class= "table">
+        @foreach (var item in Model.Solicitud)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.IdDueño
+                </td>
+                <td>
+                    @item.NombreMascota
+                </td>
+                <td>
+                    @item.TipoMascota
+                </td>
+                <td>
+                    @item.Veterinario
+                </td>
+                <td>
+                    @item.FechaVisita
+                </td>
+                <td>
+                    <a  class="btn btn-primary table-btn" asp-page="./BuscarSolicitud" asp-route-Id="@item.Id"><img src="/Img/Buscar.png" height="20px" width="20px" /> Buscar datos</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-success" asp-page="./ActualizarSolicitud" asp-route-Id="@item.Id">Actualizar</a>
+                </td>
+                 <td>
+                    <a class="btn btn-outline-success" asp-page="./IngresarSolicitud">Ingresar datos</a>
+                </td>
+            </tr>
+        }
+    </table>

@@ -8,49 +8,41 @@ namespace Mascota.App.Persistencia.AppRepositorios
     public class RepositorioSolicitudVisita: IRepositorioSolicitudVisita
     {
         
-        ///<sumary>
-        /// Referencia al contexto del paciente
-        /// </sumary>
-        
-        private readonly AppContext _appContext;
-        ///<sumary>
-        /// Metodo constructor a utilizar
-        /// Inyeccion de dependencias para indicar el contexto a utilizar
-        /// </sumary>
-        ///<param name="appContext"></param>//
-
-        public RepositorioSolicitudVisita(AppContext appContext)
-        {
-            _appContext=appContext;
-        }
         public SolicitudVisita AddSolicitud(SolicitudVisita Solicitud)
         {
-            var SolicitudAdicinada= _appContext.Solicitud.Add(Solicitud);
-            _appContext.SaveChanges();
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var SolicitudAdicinada= Contexto.Solicitud.Add(Solicitud);
+            Contexto.SaveChanges();
             return SolicitudAdicinada.Entity;
+            }
         }
         public void DeleteSolicitud(int IdSolicitud)
         {
-            var SolicitudEncontrada= _appContext.Solicitud.FirstOrDefault(s => s.Id==IdSolicitud);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var SolicitudEncontrada= Contexto.Solicitud.SingleOrDefault(s => s.Id==IdSolicitud);
             if(SolicitudEncontrada==null)
             return;
-            _appContext.Solicitud.Remove(SolicitudEncontrada);
-            _appContext.SaveChanges();
+            Contexto.Solicitud.Remove(SolicitudEncontrada);
+            Contexto.SaveChanges();
+            }
         }
         public IEnumerable<SolicitudVisita> GetAllSolicitud()
         {
              using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
-                var ListadoSolicitud= (from s in Contexto.Solicitud select s).ToList();
-                return ListadoSolicitud;
+                var GetAllSolicitud= (from s in Contexto.Solicitud select s).ToList();
+                return GetAllSolicitud;
              }
         }
         public SolicitudVisita GetSolicitud(int IdSolicitud)
         {
-            return _appContext.Solicitud.FirstOrDefault(s => s.Id==IdSolicitud);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            return Contexto.Solicitud.SingleOrDefault(s => s.Id==IdSolicitud);
+            }
         }
         public SolicitudVisita UpdateSolicitud(SolicitudVisita Solicitud)
         {
-            var SolicitudEncontrada=_appContext.Solicitud.FirstOrDefault(s => s.Id==Solicitud.Id);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var SolicitudEncontrada=Contexto.Solicitud.SingleOrDefault(s => s.Id==Solicitud.Id);
             if(SolicitudEncontrada!= null)
             {
                 SolicitudEncontrada.IdDueño=Solicitud.IdDueño;
@@ -58,9 +50,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
                 SolicitudEncontrada.TipoMascota=Solicitud.NombreMascota;
                 SolicitudEncontrada.Veterinario=Solicitud.Veterinario;
                 SolicitudEncontrada.FechaVisita=Solicitud.FechaVisita;
-                _appContext.SaveChanges();
+                Contexto.SaveChanges();
             }
             return SolicitudEncontrada;
+            }
         } 
 
     } 

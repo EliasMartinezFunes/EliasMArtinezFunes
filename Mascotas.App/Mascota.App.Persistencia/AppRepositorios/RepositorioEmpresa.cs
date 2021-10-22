@@ -6,6 +6,7 @@ namespace Mascota.App.Persistencia.AppRepositorios
 {
     public class RepositorioEmpresa: IRepositorioEmpresa
     {
+<<<<<<< HEAD
         ///<sumary>
         /// Referencia al contexto del paciente
         /// </sumary>
@@ -23,39 +24,52 @@ namespace Mascota.App.Persistencia.AppRepositorios
             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
             var EmpresaVeterinariaAdicionada= _appContext.Empresa.Add(Empresa);
             Context.SaveChanges();
+=======
+        public EmpresaVeterinaria AddEmpresa(EmpresaVeterinaria Empresa)
+        {
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var EmpresaVeterinariaAdicionada= Contexto.Empresa.Add(Empresa);
+            Contexto.SaveChanges();
+>>>>>>> 18e9966b9d8b436aff921354ed213c854d23bd33
             return EmpresaVeterinariaAdicionada.Entity;
             }
         }
         public void DeleteEmpresa(int IdEmpresa)
         {
-            var EmpresaVeterinariaEncontrada= _appContext.Empresa.FirstOrDefault(ev => ev.Id==IdEmpresa);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var EmpresaVeterinariaEncontrada= Contexto.Empresa.SingleOrDefault(ev => ev.Id==IdEmpresa);
             if (EmpresaVeterinariaEncontrada == null)
             return ;
-            _appContext.Empresa.Remove(EmpresaVeterinariaEncontrada);
-            _appContext.SaveChanges();
+            Contexto.Empresa.Remove(EmpresaVeterinariaEncontrada);
+            Contexto.SaveChanges();
+            }
         }
         public IEnumerable<EmpresaVeterinaria> GetAllEmpresa()
         {
              using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
-                var ListadoEmpresa= (from g in Contexto.Empresa select g).ToList();
-                return ListadoEmpresa;
+                var GetAllEmpresa= (from g in Contexto.Empresa select g).ToList();
+                return GetAllEmpresa;
              }
         }
         public EmpresaVeterinaria GetEmpresa(int IdEmpresa)
         {
-            return _appContext.Empresa.FirstOrDefault(ev => ev.Id==IdEmpresa);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            return Contexto.Empresa.SingleOrDefault(ev => ev.Id==IdEmpresa);
+            }
         }
         public EmpresaVeterinaria UpdateEmpresa(EmpresaVeterinaria Empresa)
         {
-            var EmpresaEncontrada= _appContext.Empresa.FirstOrDefault(ev => ev.Id==Empresa.Id);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var EmpresaEncontrada= Contexto.Empresa.SingleOrDefault(ev => ev.Id==Empresa.Id);
             if (EmpresaEncontrada!= null)
             {
                 EmpresaEncontrada.Nit=EmpresaEncontrada.Nit;
                 EmpresaEncontrada.RazonSocial=EmpresaEncontrada.RazonSocial;
                 EmpresaEncontrada.Direccion=EmpresaEncontrada.Direccion;
-                _appContext.SaveChanges();
+                Contexto.SaveChanges();
             }
             return EmpresaEncontrada;
+            }
         }
     }
 }

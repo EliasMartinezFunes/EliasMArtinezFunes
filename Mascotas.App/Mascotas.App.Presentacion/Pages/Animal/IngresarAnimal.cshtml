@@ -1,0 +1,46 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.IngresarAnimalModel
+@{
+}
+<h1>Ingresar Mascotas </h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Animals.Nombres"></label>
+        <input id="Nombre" type="text" asp-for="Animals.Nombres" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Animals.TipoAnimal"></label>
+        <input id="Tipo" type="text" asp-for="Animals.TipoAnimal" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Animals.ColorOjos"></label>
+        <input id="Ojos" type="text" asp-for="Animals.ColorOjos" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Animals.ColorPiel"></label>
+        <input id="Piel" type="text" asp-for="Animals.ColorPiel" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Animals.Estatura"></label>
+        <input id="Estatura" type="text" asp-for="Animals.Estatura" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Animals.Raza"></label>
+        <input id="Raza" type="text" asp-for="Animals.Raza" class="form-control" />
+    </div>
+    <div class="form-group">
+       <button type="submit" class="btn btn-outline-danger">Ingresar Mascota</button>
+       <button id="btnCance" onclick="LimpiarFormulario();" type="submit" class="btn btn-outline-danger">Cancelar</button>
+       <a asp-page="./ListaAnimal" class="btn btn-outline-success">Volver</a>
+       </div>     
+    </form>
+    <script>
+       function LimpiarFormulario(){
+                $("#Nombre").val('');
+                $("#Tipo").val('');
+                $("#Ojos").val('');
+                $("#Piel").val('');
+                $("#Estatura").val('');
+                $("#Raza").val('');
+                }
+     </script>

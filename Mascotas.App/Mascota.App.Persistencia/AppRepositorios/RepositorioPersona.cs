@@ -8,17 +8,7 @@ namespace Mascota.App.Persistencia.AppRepositorios
 {
     public class RepositorioPersona: IRepositorioPersona
     {
-         ///<sumary>
-        /// Referencia al contexto del paciente
-        /// </sumary>
-        
-        //private readonly AppContext _appContext;
-        ///<sumary>
-        /// Metodo constructor a utilizar
-        /// Inyeccion de dependencias para indicar el contexto a utilizar
-        /// </sumary>
-        ///<param name="appContext"></param>//
-
+        //Metodo Agregar
         public Persona AddPersona(Persona persona)
         {
             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
@@ -27,6 +17,7 @@ namespace Mascota.App.Persistencia.AppRepositorios
             return personaEncontrada.Entity;
             }
         }
+        //Metodo Eliminar
         public void DeletePersona(int IdPersona)
         {
             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
@@ -54,17 +45,18 @@ namespace Mascota.App.Persistencia.AppRepositorios
             return Contexto.Persona.SingleOrDefault(p => p.Id==IdPersona);
             }
         }
-        public Persona UpdatePersona(Persona persona)
+        //Metodo Actualizar
+        public Persona UpdatePersona(Persona personas)
         {
             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
-            var personaEncontrada= Contexto.Persona.SingleOrDefault(p => p.Id==persona.Id);
+            var personaEncontrada= Contexto.Persona.FirstOrDefault(p => p.Id==personas.Id);
             if (personaEncontrada!=null)
             {
-                personaEncontrada.Nombre=persona.Nombre;
-                personaEncontrada.DocId=persona.DocId;
-                personaEncontrada.Apellidos=persona.Apellidos;
-                personaEncontrada.Telefono=persona.Telefono;
-                personaEncontrada.Direccion=persona.Direccion;
+                personaEncontrada.Nombre=personas.Nombre;
+                personaEncontrada.DocId=personas.DocId;
+                personaEncontrada.Apellidos=personas.Apellidos;
+                personaEncontrada.Telefono=personas.Telefono;
+                personaEncontrada.Direccion=personas.Direccion;
 
                 Contexto.SaveChanges();
             }

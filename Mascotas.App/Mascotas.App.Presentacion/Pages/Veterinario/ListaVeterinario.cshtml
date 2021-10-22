@@ -1,0 +1,51 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.ListaVeterinarioModel
+@{
+}
+<hr>
+<div id="Principal" Style="width: 100%;display: table;">
+   
+    </div>
+    <div id="celda2" style="border: green 2px solid;width: 50%;display: table-cell;">
+        <h1>Medicos en turno</h1>
+    <table class= "table">
+        @foreach (var item in Model.Veterinario)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Nombre
+                </td>
+                <td>
+                    @item.Apellidos
+                </td>
+                <td>
+                    @item.Telefono
+                </td>
+                <td>
+                    @item.Direccion
+                </td>
+                <td>
+                    @item.TarjetaProfesional
+                </td>
+                <td>
+                    @item.Especializacion
+                </td>
+                <td>
+                    <a  class="btn btn-primary table-btn" asp-page="./BuscarVeterinario" asp-route-Id="@item.Id"><img src="/Img/Buscar.png" height="20px" width="20px" /> Buscar datos</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-success" asp-page="./ActualizarVeterinario" asp-route-Id="@item.Id">Actualizar</a>
+                </td>
+                 <td>
+                    <a class="btn btn-outline-success" asp-page="./IngresarVeterinario">Ingresar datos</a>
+                </td>
+            </tr>
+        }
+    </table>
+     
+                    <a class="btn btn-outline-success" asp-page="./IngresarVeterinario">Ingresar datos</a>
+                
+    </div>

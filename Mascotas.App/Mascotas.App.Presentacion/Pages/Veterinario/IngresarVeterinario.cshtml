@@ -1,0 +1,51 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.IngresarVeterinarioModel
+@{
+}
+<h1>Ingresar Veterinario </h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Veterinario.Nombre"></label>
+        <input id="Nombre" type="text" asp-for="Veterinario.Nombre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Veterinario.Id"></label>
+        <input id="IdV" type="text" asp-for="Veterinario.Id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Veterinario.Apellidos"></label>
+        <input id="Apellidos" type="text" asp-for="Veterinario.Apellidos" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Veterinario.Telefono"></label>
+        <input id="Telefono" type="text" asp-for="Veterinario.Telefono" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Veterinario.Direccion"></label>
+        <input id="Direccion" type="text" asp-for="Veterinario.Direccion" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Veterinario.TarjetaProfesional"></label>
+        <input id="Tarjeta" type="text" asp-for="Veterinario.TarjetaProfesional" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Veterinario.Especializacion"></label>
+        <input id="Especializacion" type="text" asp-for="Veterinario.Especializacion" class="form-control" />
+    </div>
+    <div class="form-group">
+       <button type="submit" class="btn btn-outline-danger">Ingresar Datos</button>
+       <button id="btnCance" onclick="LimpiarFormulario();" type="submit" class="btn btn-outline-danger">Cancelar</button>
+       <a asp-page="./Personas" class="btn btn-outline-success">Volver</a>
+       </div>     
+    </form>
+    <script>
+       function LimpiarFormulario(){
+                $("#Nombre").val('');
+                $("#IdV").val('');
+                $("#Apellidos").val('');
+                $("#Telefono").val('');
+                $("#Direccion").val('');
+                $("#Tarjeta").val('');
+                $("#Especializacion").val('');
+                }
+     </script>

@@ -4,58 +4,52 @@ using System.Linq;
 
 namespace Mascota.App.Persistencia.AppRepositorios
 {
-    public class RepositorioVeterinario
+    public class RepositorioVeterinario: IRepositorioVeterinario
     {
-        ///<sumary>
-        /// Referencia al contexto del paciente
-        /// </sumary>
-        
-        private readonly AppContext _appContext;
-        ///<sumary>
-        /// Metodo constructor a utilizar
-        /// Inyeccion de dependencias para indicar el contexto a utilizar
-        /// </sumary>
-        ///<param name="appContext"></param>//
-
-        public RepositorioVeterinario(AppContext appContext)
-        {
-            _appContext=appContext;
-        }
+       
         public Veterinario AddVeterinario(Veterinario Veterinario)
         {
-            var VeterinarioAdicionado= _appContext.Veterinario.Add(Veterinario);
-            _appContext.SaveChanges();
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var VeterinarioAdicionado= Contexto.Veterinario.Add(Veterinario);
+            Contexto.SaveChanges();
             return VeterinarioAdicionado.Entity;
+            }
         }
         public void DeleteVeterinario(int IdVeterinario)
         {
-            var VeterinarioEncontrado=_appContext.Veterinario.FirstOrDefault(v => v.Id==IdVeterinario);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var VeterinarioEncontrado=Contexto.Veterinario.SingleOrDefault(v => v.Id==IdVeterinario);
             if(VeterinarioEncontrado == null)
             return ;
-            _appContext.Veterinario.Remove(VeterinarioEncontrado);
-            _appContext.SaveChanges();
+            Contexto.Veterinario.Remove(VeterinarioEncontrado);
+            Contexto.SaveChanges();
+            }
         }
         public IEnumerable<Veterinario> GetAllVeterinario()
         {
              using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
-                var ListadoVeterinario= (from v in Contexto.Veterinario select v).ToList();
-                return ListadoVeterinario;
+                var GetAllVeterinario= (from v in Contexto.Veterinario select v).ToList();
+                return GetAllVeterinario;
              }
         }
         public Veterinario GetVeterinario(int IdVeterinario)
         {
-            return _appContext.Veterinario.FirstOrDefault(v => v.Id==IdVeterinario);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            return Contexto.Veterinario.SingleOrDefault(v => v.Id==IdVeterinario);
+            }
         }
         public Veterinario UpdateVeterinario(Veterinario Veterinario)
         {
-            var VeterinarioEncontrado=_appContext.Veterinario.FirstOrDefault(v => v.Id==Veterinario.Id);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var VeterinarioEncontrado=Contexto.Veterinario.SingleOrDefault(v => v.Id==Veterinario.Id);
             if(VeterinarioEncontrado!=null)
             {
                 VeterinarioEncontrado.TarjetaProfesional=VeterinarioEncontrado.TarjetaProfesional;
                 VeterinarioEncontrado.Especializacion=VeterinarioEncontrado.Especializacion;
-                _appContext.SaveChanges();
+                Contexto.SaveChanges();
             }
             return VeterinarioEncontrado;
+            }
         } 
     }
 }

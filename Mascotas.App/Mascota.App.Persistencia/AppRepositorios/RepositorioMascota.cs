@@ -1,59 +1,49 @@
 using Mascota.App.Dominio.Entidades;
-//using Mascota.App.Persistencia.AppRepositorios;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Mascota.App.Persistencia.AppRepositorios
 {
     public class RepositorioMascota: IRepositorioMascota
     {
-        ///<sumary>
-        /// Referencia al contexto del paciente
-        /// </sumary>
-        
-        private readonly AppContext _appContext;
-        ///<sumary>
-        /// Metodo constructor a utilizar
-        /// Inyeccion de dependencias para indicar el contexto a utilizar
-        /// </sumary>
-        ///<param name="appContext"></param>//
-
-        public RepositorioMascota(AppContext appContext)
-        {
-            _appContext=appContext;
-        }
-
-
         public Animal AddAnimals(Animal animals)
         {
-            var AnimalsAdicionada= _appContext.Animals.Add(animals);
-            _appContext.SaveChanges();
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var AnimalsAdicionada= Contexto.Animals.Add(animals);
+            Contexto.SaveChanges();
             return AnimalsAdicionada.Entity;
+            }
 
         }
         public void DeleteAnimals(int IdAnimals)
         {
-            var AnimalEncontrada= _appContext.Animals.FirstOrDefault(m => m.Id==IdAnimals);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            var AnimalEncontrada= Contexto.Animals.SingleOrDefault(m => m.Id==IdAnimals);
             if (AnimalEncontrada == null)
             return ;
-            _appContext.Animals.Remove(AnimalEncontrada);
-            _appContext.SaveChanges();
+            Contexto.Animals.Remove(AnimalEncontrada);
+            Contexto.SaveChanges();
+            }
         }
 
         public IEnumerable<Animal> GetAllAnimals()
         {
              using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
-                var ListadoAnimals= (from a in Contexto.Animals select a).ToList();
-                return ListadoAnimals;
+                var GetAllAnimals= (from a in Contexto.Animals select a).ToList();
+                return GetAllAnimals;
              }
         }
         public Animal GetAnimals(int IdAnimals)
         {
-            return _appContext.Animals.FirstOrDefault(m => m.Id==IdAnimals);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+            return Contexto.Animals.SingleOrDefault(m => m.Id==IdAnimals);
+            }
         }
         public Animal UpdateAnimals(Animal Animal)
         {
-             var AnimalEncontrada= _appContext.Animals.FirstOrDefault(m => m.Id==Animal.Id);
+            using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
+             var AnimalEncontrada= Contexto.Animals.SingleOrDefault(m => m.Id==Animal.Id);
             if (AnimalEncontrada!=null)
             {
                 AnimalEncontrada.Nombres=Animal.Nombres;
@@ -62,9 +52,10 @@ namespace Mascota.App.Persistencia.AppRepositorios
                 AnimalEncontrada.ColorPiel=Animal.ColorPiel;
                 AnimalEncontrada.Estatura=Animal.Estatura;
                 AnimalEncontrada.Raza=Animal.Raza;
-                _appContext.SaveChanges();
+                Contexto.SaveChanges();
             }
             return AnimalEncontrada;
+            }
         }
 
      }

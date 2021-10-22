@@ -1,0 +1,41 @@
+﻿@page
+@model Mascotas.App.Presentacion.Pages.ActualizarEmpresaModel
+@{
+}
+h1>Actualizar Datos Empresa </h1>
+<form method="POST">
+
+    <div class="form-group">
+        <label asp-for="Empresa.Id"></label>
+        <input id="IdE" type="text" asp-for="Empresa.Id" class="form-control" />
+        
+    </div>
+    <div class="form-group">
+        <label asp-for="Empresa.Nit"></label>
+        <input id="Nit" type="text" asp-for="Empresa.Nit" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Empresa.RazonSocial"></label>
+        <input id="Razon" type="text" asp-for="Empresa.RazonSocial" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Empresa.Direccion"></label>
+        <input id="Direccion" type="text" asp-for="Empresa.Direccion" class="form-control" />
+    </div>
+    <div>
+       <button id="btnCance" onclick="LimpiarFormulario();" type="submit" class="btn btn-outline-danger">Cancelar</button>
+       <a asp-page="./ListaEmpresa" class="btn btn-outline-success">Volver</a>
+       </div>   
+       <div>
+           
+       </div>  
+    </form>
+    <script>
+       function LimpiarFormulario(){
+                $("#IdE").val('');
+                $("#Nit").val('');
+                $("#Razon").val('');
+                $("#Direccion").val('');
+                }
+     </script>

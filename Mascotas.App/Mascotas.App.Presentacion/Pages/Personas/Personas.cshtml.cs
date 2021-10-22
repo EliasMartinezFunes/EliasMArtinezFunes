@@ -15,7 +15,7 @@ namespace Mascotas.App.Presentacion.Pages
         private readonly IRepositorioPersona repositorio;
         //Variable que contiene Asignacion buscar persona
         public IEnumerable<Mascota.App.Dominio.Entidades.Persona> personas = new List<Mascota.App.Dominio.Entidades.Persona>();
-
+       
         // Metodo de inicializacion de la pagina
         public void OnGet()
         {
