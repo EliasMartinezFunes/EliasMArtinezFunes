@@ -14,6 +14,7 @@ C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.
 C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.dll
 C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.pdb
 C:\E-Pets\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\bin\Debug\netcoreapp3.1\Mascota.App.Persistencia.deps.json
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\bin\Debug\netcoreapp3.1\Mascota.App.Persistencia.runtimeconfig.json
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\bin\Debug\netcoreapp3.1\Mascota.App.Persistencia.runtimeconfig.dev.json
@@ -21,12 +22,19 @@ C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\b
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\bin\Debug\netcoreapp3.1\Mascota.App.Persistencia.pdb
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\bin\Debug\netcoreapp3.1\Mascota.App.Dominio.dll
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\bin\Debug\netcoreapp3.1\Mascota.App.Dominio.pdb
+=======
+>>>>>>> sprint3
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.csproj.AssemblyReference.cache
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.GeneratedMSBuildEditorConfig.editorconfig
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.AssemblyInfoInputs.cache
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.AssemblyInfo.cs
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.csproj.CopyComplete
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.dll
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.pdb
 C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.genruntimeconfig.cache
+=======
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.dll
+C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascota.App.Persistencia\obj\Debug\netcoreapp3.1\Mascota.App.Persistencia.pdb
+>>>>>>> sprint3
