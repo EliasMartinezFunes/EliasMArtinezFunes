@@ -5737,19 +5737,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\win\\.nuget\\packages\\": {}
+    "C:\\Users\\finab\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\E-Pets\\Mascotas.App\\Mascotas.App.Presentacion\\Mascotas.App.Presentasion.csproj",
+      "projectUniqueName": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascotas.App.Presentacion\\Mascotas.App.Presentasion.csproj",
       "projectName": "Mascotas.App.Presentasion",
-      "projectPath": "C:\\E-Pets\\Mascotas.App\\Mascotas.App.Presentacion\\Mascotas.App.Presentasion.csproj",
-      "packagesPath": "C:\\Users\\win\\.nuget\\packages\\",
-      "outputPath": "C:\\E-Pets\\Mascotas.App\\Mascotas.App.Presentacion\\obj\\",
+      "projectPath": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascotas.App.Presentacion\\Mascotas.App.Presentasion.csproj",
+      "packagesPath": "C:\\Users\\finab\\.nuget\\packages\\",
+      "outputPath": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascotas.App.Presentacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\win\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\finab\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5761,11 +5761,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\E-Pets\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj": {
-              "projectPath": "C:\\E-Pets\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj"
+            "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj": {
+              "projectPath": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj"
             },
-            "C:\\E-Pets\\Mascotas.App\\Mascota.App.Persistencia\\Mascota.App.Persistencia.csproj": {
-              "projectPath": "C:\\E-Pets\\Mascotas.App\\Mascota.App.Persistencia\\Mascota.App.Persistencia.csproj"
+            "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascota.App.Persistencia\\Mascota.App.Persistencia.csproj": {
+              "projectPath": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascota.App.Persistencia\\Mascota.App.Persistencia.csproj"
             }
           }
         }
@@ -5797,7 +5797,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

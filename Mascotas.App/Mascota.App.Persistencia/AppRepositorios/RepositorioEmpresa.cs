@@ -10,7 +10,7 @@ namespace Mascota.App.Persistencia.AppRepositorios
         /// Referencia al contexto del paciente
         /// </sumary>
         
-        private readonly AppContext _appContext;
+        //private readonly AppContext appContext;
         ///<sumary>
         /// Metodo constructor a utilizar
         /// Inyeccion de dependencias para indicar el contexto a utilizar
@@ -22,7 +22,7 @@ namespace Mascota.App.Persistencia.AppRepositorios
         {
             using (AppRepositorios.AppContext Contexto= new AppRepositorios.AppContext()){
             var EmpresaVeterinariaAdicionada= _appContext.Empresa.Add(Empresa);
-            _appContext.SaveChanges();
+            Context.SaveChanges();
             return EmpresaVeterinariaAdicionada.Entity;
             }
         }

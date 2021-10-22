@@ -10,7 +10,7 @@ namespace Mascota.App.Persistencia.AppRepositorios
         /// Referencia al contexto del paciente
         /// </sumary>
         
-        private readonly AppContext _appContext;
+        //private readonly AppContext _appContext;
         ///<sumary>
         /// Metodo constructor a utilizar
         /// Inyeccion de dependencias para indicar el contexto a utilizar

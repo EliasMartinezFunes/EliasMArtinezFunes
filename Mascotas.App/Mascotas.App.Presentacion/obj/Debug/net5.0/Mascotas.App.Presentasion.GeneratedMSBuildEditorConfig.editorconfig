@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Mascotas.App.Presentasion
-build_property.ProjectDir = C:\E-Pets\Mascotas.App\Mascotas.App.Presentacion\
+build_property.ProjectDir = C:\laragon\www\Enigma\EliasMArtinezFunes\Mascotas.App\Mascotas.App.Presentacion\

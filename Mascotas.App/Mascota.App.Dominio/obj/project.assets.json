@@ -8,19 +8,19 @@
     ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "C:\\Users\\win\\.nuget\\packages\\": {}
+    "C:\\Users\\finab\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\E-Pets\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj",
+      "projectUniqueName": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj",
       "projectName": "Mascota.App.Dominio",
-      "projectPath": "C:\\E-Pets\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj",
-      "packagesPath": "C:\\Users\\win\\.nuget\\packages\\",
-      "outputPath": "C:\\E-Pets\\Mascotas.App\\Mascota.App.Dominio\\obj\\",
+      "projectPath": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascota.App.Dominio\\Mascota.App.Dominio.csproj",
+      "packagesPath": "C:\\Users\\finab\\.nuget\\packages\\",
+      "outputPath": "C:\\laragon\\www\\Enigma\\EliasMArtinezFunes\\Mascotas.App\\Mascota.App.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\win\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\finab\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
